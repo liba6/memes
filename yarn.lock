@@ -3762,6 +3762,11 @@ get-tsconfig@^4.2.0:
   resolved "https://registry.yarnpkg.com/get-tsconfig/-/get-tsconfig-4.3.0.tgz#4c26fae115d1050e836aea65d6fe56b507ee249b"
   integrity sha512-YCcF28IqSay3fqpIu5y3Krg/utCBHBeoflkZyHj/QcqI2nrLPC3ZegS9CmIo+hJb8K7aiGsuUl7PwWVjNG2HQQ==
 
+get@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/get/-/get-1.4.0.tgz#5de87b935839d755a17964773cc35e41ee33cd57"
+  integrity sha512-RIEc0E/y2dTo/90Or33BNQzRNW5R1cchwQQgR9JroZkqxrCFeOlU3/u7nAbpteDR7ziFbmeaQtDTJ3s6B/6vtQ==
+
 getpass@^0.1.1:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa"

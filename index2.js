@@ -10,13 +10,9 @@ const options = {
     documentName: 'Quick Start',
   },
 };
-
-const gotStream = got.stream.post(url, options);
+const readable = fs.createReadStream(url);
+//const gotStream = got.stream.post(url, options);
 
 const outStream = fs.createWriteStream('./images.js/01.jpg');
 
-try {
-  await pipeline(gotStream, outStream);
-} catch (error) {
-  console.error(error);
-}
+console.log(readable.pipe(outStream));

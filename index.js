@@ -1,6 +1,7 @@
 import got from 'got';
 import * as cheerio from 'cheerio';
 import fs from 'fs';
+import client from 'https';
 
 const site = 'https://memegen-link-examples-upleveled.netlify.app/';
 const respond = await got(site);
@@ -13,14 +14,13 @@ const imgSrcs = [];
 for (let i = 0; i < 10; i++) {
   imgSrcs.push(pics[i].attribs.src);
 }
-console.log(imgSrcs, 'all urls');
+console.log(imgSrcs);
+//push every element in imgSrcs array to its own file
 
-// //
-//const imgAddress = './images.js/01.jpg';
-const answer = await got(
-  'https://api.memegen.link/images/bad/your_meme_is_bad/and_you_should_feel_bad.jpg?width=300',
-);
-console.log(answer.headers);
-// // for (let j = 0; j < 11; j++) {
-// //   const answer = await got(imgSrcs[j]);
-// // }
+for (let j = 0; j < imgSrcs.length; j++) {
+  client.get(imgSrcs[j], (res) => {
+    console.log(j);
+    const dir = `./memes/0${j + 1}.jpg`;
+    res.pipe(fs.createWriteStream(dir));
+  });
+}
